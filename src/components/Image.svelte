@@ -25,7 +25,7 @@
 		const observer = new IntersectionObserver((entries) => {
 			if (entries[0].isIntersecting) {
 				loading = true;
-				console.log('an image has loaded'); // console log for REPL
+				// console.log('an image has loaded'); // console log for REPL
 				image.srcset = srcset; // replace placeholder src with the image src on observe
 				if (image.complete) {
 					// check if instantly loaded
@@ -102,14 +102,7 @@
 -->
 <div class="relative mb-4 border border-neutral-800 rounded overflow-hidden">
 	{#if placeholder}
-		<img
-			decoding="async"
-			src={placeholder}
-			{width}
-			{height}
-			alt=""
-			class="relative inset-0 lg:blur"
-		/>
+		<img decoding="async" src={placeholder} {width} {height} alt="" class="relative lg:blur" />
 	{/if}
 	<!-- <div
 		style="background-image: url({placeholder}); background-size: cover;"
